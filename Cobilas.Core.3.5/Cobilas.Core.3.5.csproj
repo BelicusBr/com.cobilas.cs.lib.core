@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B96630BC-2005-4561-AC07-84BD0F57AB3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cobilas.Core</RootNamespace>
+    <AssemblyName>Cobilas.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cobilas.Collections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cobilas.Collections.1.1.0\lib\net35\Cobilas.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\PJ_CharExtenção\Char_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_CharExtenção\Char_CB_ExtensionEnum.cs" />
+    <Compile Include="Extensions\PJ_EnumExtenção\Enum_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_HashAlgorithmextenção\HashAlgorithm_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_ObjectExtenção\Object_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_StreamExtencao\Stream_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_StringBuilderExtenção\StringBuilder_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_StringExtenção\String_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_TypeExtenção\Type_CB_Extension.cs" />
+    <Compile Include="Extensions\PJ_XMLExtenção\Classe auxiliares\ElementAttribute.cs" />
+    <Compile Include="Extensions\PJ_XMLExtenção\Classe auxiliares\ElementBase.cs" />
+    <Compile Include="Extensions\PJ_XMLExtenção\Classe auxiliares\ElementTag.cs" />
+    <Compile Include="Extensions\PJ_XMLExtenção\Classe auxiliares\ElementValue.cs" />
+    <Compile Include="Extensions\PJ_XMLExtenção\XMLExtenção\XMLReadExtencao.cs" />
+    <Compile Include="Extensions\PJ_XMLExtenção\XMLExtenção\XMLWriterExtencao.cs" />
+    <Compile Include="Interrupter.cs" />
+    <Compile Include="Numeric\BaseCalcItem.cs" />
+    <Compile Include="Numeric\CalcSign.cs" />
+    <Compile Include="Numeric\Calculator.cs" />
+    <Compile Include="Numeric\CalcValue.cs" />
+    <Compile Include="Numeric\Convert\BitArray_Binary_Extension.cs" />
+    <Compile Include="Numeric\Convert\String_Hexadecimal_Extension.cs" />
+    <Compile Include="PrintOut.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeUtilitarian.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

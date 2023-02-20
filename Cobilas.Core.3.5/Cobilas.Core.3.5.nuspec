@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Cobilas.Core.net35</id>
+    <version>1.0.0</version>
+    <title>Cobilas.Core [3.5]</title>
+    <authors>Cobilas</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Cobilas Core .netframework 3.5</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>CSharp</tags>
+  </metadata>
+</package>
