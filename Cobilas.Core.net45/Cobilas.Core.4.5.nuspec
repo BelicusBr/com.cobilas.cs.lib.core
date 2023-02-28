@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>Cobilas.Core</id>
+		<version>2.0.0</version>
+		<title>Cobilas.Core</title>
+		<authors>Cobilas</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<projectUrl>https://www.nuget.org/packages/Cobilas.Core</projectUrl>
+		<description>Cobilas core</description>
+		<license type="expression">MIT</license>
+		<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+		<tags>CSharp</tags>
+	</metadata>
+</package>

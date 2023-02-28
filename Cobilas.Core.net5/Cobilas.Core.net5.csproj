@@ -1,0 +1,109 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Cobilas.Core</AssemblyName>
+    <RootNamespace>Cobilas</RootNamespace>
+    <Version>3.0.0</Version>
+    <Authors>Cobilas</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Cobilas core</Description>
+    <PackageTags>CSharp</PackageTags>
+    <PackageProjectUrl>https://www.nuget.org/packages/Cobilas.Core</PackageProjectUrl>
+    <PackageReleaseNotes>Updatet for NET 5</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cobilas.Collections" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\PJ_CharExtenção\" />
+    <Folder Include="Extensions\PJ_XMLExtenção\Classe auxiliares\" />
+    <Folder Include="Extensions\PJ_XMLExtenção\XMLExtenção\" />
+    <Folder Include="Numeric\Convert\" />
+    <Folder Include="Threading\Tasks\Interfaces\" />
+  </ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\Enum_CB_Extension.cs">
+			<Link>Extensions\Enum_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\HashAlgorithm_CB_Extension.cs">
+			<Link>Extensions\HashAlgorithm_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\Object_CB_Extension.cs">
+			<Link>Extensions\Object_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_CharExtenção\Char_CB_Extension.cs">
+			<Link>Extensions\PJ_CharExtenção\Char_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_CharExtenção\Char_CB_ExtensionEnum.cs">
+			<Link>Extensions\PJ_CharExtenção\Char_CB_ExtensionEnum.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_XMLExtenção\Classe auxiliares\ElementAttribute.cs">
+			<Link>Extensions\PJ_XMLExtenção\Classe auxiliares\ElementAttribute.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_XMLExtenção\Classe auxiliares\ElementBase.cs">
+			<Link>Extensions\PJ_XMLExtenção\Classe auxiliares\ElementBase.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_XMLExtenção\Classe auxiliares\ElementTag.cs">
+			<Link>Extensions\PJ_XMLExtenção\Classe auxiliares\ElementTag.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_XMLExtenção\Classe auxiliares\ElementValue.cs">
+			<Link>Extensions\PJ_XMLExtenção\Classe auxiliares\ElementValue.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_XMLExtenção\XMLExtenção\XMLReadExtencao.cs">
+			<Link>Extensions\PJ_XMLExtenção\XMLExtenção\XMLReadExtencao.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\PJ_XMLExtenção\XMLExtenção\XMLWriterExtencao.cs">
+			<Link>Extensions\PJ_XMLExtenção\XMLExtenção\XMLWriterExtencao.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\Stream_CB_Extension.cs">
+			<Link>Extensions\Stream_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\StringBuilder_CB_Extension.cs">
+			<Link>Extensions\StringBuilder_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\String_CB_Extension.cs">
+			<Link>Extensions\String_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Extensions\Type_CB_Extension.cs">
+			<Link>Extensions\Type_CB_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Interrupter.cs">
+			<Link>Interrupter.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Numeric\BaseCalcItem.cs">
+			<Link>Numeric\BaseCalcItem.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Numeric\CalcSign.cs">
+			<Link>Numeric\CalcSign.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Numeric\Calculator.cs">
+			<Link>Numeric\Calculator.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Numeric\CalcValue.cs">
+			<Link>Numeric\CalcValue.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Numeric\Convert\BitArray_Binary_Extension.cs">
+			<Link>Numeric\Convert\BitArray_Binary_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\Numeric\Convert\String_Hexadecimal_Extension.cs">
+			<Link>Numeric\Convert\String_Hexadecimal_Extension.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\PrintOut.cs">
+			<Link>PrintOut.cs</Link>
+		</Compile>
+		<Compile Include="..\Cobilas.Core.net35\TypeUtilitarian.cs" Link="TypeUtilitarian.cs"/>
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\AsyncTask.cs" Link="Threading\Tasks\AsyncTask.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\AsyncTaskWait.cs" Link="Threading\Tasks\AsyncTaskWait.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\Interfaces\IAsyncTask.cs" Link="Threading\Tasks\Interfaces\IAsyncTask.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\Interfaces\IAsyncTaskWait.cs" Link="Threading\Tasks\Interfaces\IAsyncTaskWait.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\Interfaces\ITaskPoolItem.cs" Link="Threading\Tasks\Interfaces\ITaskPoolItem.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\InternalWait.cs" Link="Threading\Tasks\InternalWait.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\TaskPool.cs" Link="Threading\Tasks\TaskPool.cs" />
+		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\TaskPoolItem.cs" Link="Threading\Tasks\TaskPoolItem.cs" />
+	</ItemGroup>
+
+</Project>
