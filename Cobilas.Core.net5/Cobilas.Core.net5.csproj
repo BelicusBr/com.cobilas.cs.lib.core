@@ -18,13 +18,6 @@
     <PackageReference Include="Cobilas.Collections" Version="2.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extensions\PJ_CharExtenção\" />
-    <Folder Include="Extensions\PJ_XMLExtenção\Classe auxiliares\" />
-    <Folder Include="Extensions\PJ_XMLExtenção\XMLExtenção\" />
-    <Folder Include="Numeric\Convert\" />
-    <Folder Include="Threading\Tasks\Interfaces\" />
-  </ItemGroup>
 	<ItemGroup>
 		<Compile Include="..\Cobilas.Core.net35\Extensions\Enum_CB_Extension.cs">
 			<Link>Extensions\Enum_CB_Extension.cs</Link>
