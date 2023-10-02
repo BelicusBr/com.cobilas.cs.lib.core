@@ -362,5 +362,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Cobilas.Core.net45/.igi
-/Cobilas.Core.net35/.igi
+/Cobilas.Core/.igi
