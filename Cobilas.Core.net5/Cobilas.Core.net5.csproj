@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Cobilas.Core</AssemblyName>
     <RootNamespace>Cobilas</RootNamespace>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <Authors>Cobilas</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Cobilas core</Description>
@@ -88,7 +88,7 @@
 		<Compile Include="..\Cobilas.Core.net35\PrintOut.cs">
 			<Link>PrintOut.cs</Link>
 		</Compile>
-		<Compile Include="..\Cobilas.Core.net35\TypeUtilitarian.cs" Link="TypeUtilitarian.cs"/>
+		<Compile Include="..\Cobilas.Core.net35\TypeUtilitarian.cs" Link="TypeUtilitarian.cs" />
 		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\AsyncTask.cs" Link="Threading\Tasks\AsyncTask.cs" />
 		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\AsyncTaskWait.cs" Link="Threading\Tasks\AsyncTaskWait.cs" />
 		<Compile Include="..\Cobilas.Core.net45\Threading\Tasks\Interfaces\IAsyncTask.cs" Link="Threading\Tasks\Interfaces\IAsyncTask.cs" />
