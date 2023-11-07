@@ -11,38 +11,33 @@ namespace com.cobilas.cs.lib.core.test {
         
         static void Main(string[] args) {
             //Console.Clear();
-            using (FileStream stream = File.OpenRead(pt3)) {
+            using (FileStream stream = File.OpenRead(pt2)) {
                 Console.WriteLine("Iniciar leitura");
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.DtdProcessing = DtdProcessing.Parse;
                 using (XmlReader reader = XmlReader.Create(stream, settings)) {
-                    while (reader.Read()) {
-                        switch (reader.NodeType) {
-                            case XmlNodeType.ProcessingInstruction:
-                                Console.WriteLine("ProcessingInstruction");
-                                Console.WriteLine(reader.Name);
-                                for (int I = 0; I < reader.AttributeCount; I++) {
-                                    reader.MoveToAttribute(I);
-                                    Console.WriteLine($"Name:{reader.Name} Value:{reader.Value}");
-                                }
-                                reader.MoveToElement();
-                                break;
-                            case XmlNodeType.CDATA:
-                                Console.WriteLine("CDATA");
-                                Console.WriteLine(reader.Value);
-                                break;
-                            case XmlNodeType.DocumentType:
-                                Console.WriteLine("DocumentType");
-                                Console.WriteLine(reader.Name);
-                                Console.WriteLine(reader.Value);
-                                break;
-                            case XmlNodeType.Text:
-                                break;
-                        }
-                    }
+                    Console.WriteLine(xmlread(reader));
                 }
             }
             _ = Console.ReadLine();
+        }
+
+        static void xmlwriter(XMLIRWElement element, XmlWriter writer) {
+            writer.WriteStartDocument();
+            foreach (var item in element)
+                switch (item.NodeType) {
+                    case XmlNodeType.Element:
+                        break;
+                    case XmlNodeType.XmlDeclaration:
+                        break;
+                    case XmlNodeType.DocumentType:
+                        break;
+                    case XmlNodeType.ProcessingInstruction:
+                        break;
+                    case XmlNodeType.CDATA:
+                        break;
+                }
+            writer.WriteEndDocument();
         }
 
         static XMLIRWElement xmlread(XmlReader reader) {
@@ -91,7 +86,7 @@ namespace com.cobilas.cs.lib.core.test {
                         }
                         if (reader.IsEmptyElement)
                             element.Add(new XMLIRWElement(reader.Name, XmlNodeType.Element, attributes));
-                        else element = new XMLIRWElement(reader.Name, XmlNodeType.Element, attributes);
+                        else element.Add(element = new XMLIRWElement(reader.Name, XmlNodeType.Element, attributes));
                         break;
                     case XmlNodeType.Text:
                         element.Value = new(reader.Value);
