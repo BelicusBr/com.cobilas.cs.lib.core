@@ -17,6 +17,14 @@ namespace System.Xml {
         public override string ToString()
             => value == (object)null ? string.Empty : value.ToString();
 
+        public string ToString(IFormatProvider provider)
+            => Convert.ToString(value, provider);
+            
+        public override bool Equals(object obj)
+            => obj is XMLIRWValue V && Equals(V);
+
+        public override int GetHashCode() => base.GetHashCode();
+
         TypeCode IConvertible.GetTypeCode()
             => Convert.GetTypeCode(value);
 
@@ -53,9 +61,6 @@ namespace System.Xml {
         float IConvertible.ToSingle(IFormatProvider provider)
             => Convert.ToSingle(value, provider);
 
-        string IConvertible.ToString(IFormatProvider provider)
-            => Convert.ToString(value, provider);
-
         object IConvertible.ToType(Type conversionType, IFormatProvider provider)
             => Convert.ChangeType(value, conversionType, provider);
 
@@ -67,11 +72,6 @@ namespace System.Xml {
 
         ulong IConvertible.ToUInt64(IFormatProvider provider)
             => Convert.ToUInt64(value, provider);
-
-        public override bool Equals(object obj)
-            => obj is XMLIRWValue V && Equals(V);
-
-        public override int GetHashCode() => base.GetHashCode();
 
         public static bool operator ==(XMLIRWValue left, XMLIRWValue right) => left.Equals(right);
         public static bool operator !=(XMLIRWValue left, XMLIRWValue right) => !(left == right);
