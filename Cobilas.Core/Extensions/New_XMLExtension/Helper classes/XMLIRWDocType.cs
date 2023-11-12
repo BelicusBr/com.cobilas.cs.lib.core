@@ -21,6 +21,10 @@ namespace System.Xml {
             this.subset = subset;
         }
         public XMLIRWDocType(string name, XMLIRWValue pudid, XMLIRWValue sysid, XMLIRWValue subset) : this(null, name, pudid, sysid, subset) {}
+        public XMLIRWDocType(XMLIRWElement parent, string name, object pudid, object sysid, object subset) :
+            this(parent, name, new XMLIRWValue(pudid), new XMLIRWValue(sysid), new XMLIRWValue(subset)) {}
+        public XMLIRWDocType(string name, object pudid, object sysid, object subset) :
+            this(name, new XMLIRWValue(pudid), new XMLIRWValue(sysid), new XMLIRWValue(subset)) {}
 
         ~XMLIRWDocType() => Dispose(disposing: false);
 

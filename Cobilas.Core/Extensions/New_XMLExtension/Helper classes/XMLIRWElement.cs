@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace System.Xml {
     /// <summary>XML improved reader and writer element.</summary>
-    public class XMLIRWElement : XMLIRW, IEnumerable<XMLIRWElement> {
+    public class XMLIRWElement : XMLIRW, IXMLIRWCollection {
         private bool disposedValue;
         private XMLIRW[] itens;
 
@@ -104,20 +104,17 @@ namespace System.Xml {
             return builder.ToString();
         }
 
-        private void Dispose(bool disposing) {
+        protected virtual void Dispose(bool disposing) {
             if (!disposedValue) {
-                if (disposing)
-                    InternalDispose();
+                if (disposing) {
+                    Name = null;
+                    Parent = null;
+                    Type = default;
+                    Value = default;
+                    ArrayManipulation.ClearArraySafe(ref itens);
+                }
                 disposedValue = true;
             }
-        }
-
-        protected virtual void InternalDispose() {
-            Name = null;
-            Parent = null;
-            Type = default;
-            Value = default;
-            ArrayManipulation.ClearArraySafe(ref itens);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
