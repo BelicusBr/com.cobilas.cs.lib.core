@@ -1,5 +1,6 @@
 ﻿namespace System.Xml {
     public static class XMLRead_CB_Extension {
+        [Obsolete("Use XMLIRWElement:ReadXMLIRW(this XmlReader)")]
         public static ElementTag GetElementTag(this XmlReader R) {
             ElementTag Res = null;
             ElementTag Atual = null;

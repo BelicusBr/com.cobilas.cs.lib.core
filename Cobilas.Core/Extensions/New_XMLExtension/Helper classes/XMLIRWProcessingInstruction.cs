@@ -1,18 +1,19 @@
-
 namespace System.Xml {
-    public class XMLIRWCDATA : XMLIRW {
+    public class XMLIRWProcessingInstruction : XMLIRW, IDisposable {
         private bool disposedValue;
 
         public override string Name { get; set; }
         public override XMLIRW Parent { get; set; }
-        public XMLIRWValue Value { get; private set;}
+        public XMLIRWValue Value { get; private set; }
         public override XmlNodeType Type { get; set; }
 
-        public XMLIRWCDATA(XMLIRW parent, XMLIRWValue value) : base(parent, "CData", XmlNodeType.CDATA) {
-            Value = value;
+        public XMLIRWProcessingInstruction(XMLIRW parent, string name, XMLIRWValue value) : base(parent, name, XmlNodeType.ProcessingInstruction) {
+            this.Value = value;
         }
 
-        ~XMLIRWCDATA()
+        public XMLIRWProcessingInstruction(string name, XMLIRWValue value) : this(null, name, value) {}
+
+        ~XMLIRWProcessingInstruction()
             => Dispose(disposing: false);
 
         protected virtual void Dispose(bool disposing) {

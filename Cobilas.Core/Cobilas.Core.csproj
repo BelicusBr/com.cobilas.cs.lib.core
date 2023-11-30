@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Cobilas.Core</AssemblyName>
     <RootNamespace>Cobilas</RootNamespace>
-    <Version>3.1.1</Version>
+    <Version>3.2.0</Version>
     <Authors>Cobilas</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Cobilas core</Description>

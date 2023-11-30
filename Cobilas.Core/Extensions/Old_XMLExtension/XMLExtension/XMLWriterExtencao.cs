@@ -2,6 +2,7 @@
 
 namespace System.Xml {
     public static class XMLWriter_CB_Extension {
+        [Obsolete("Use WriterXMLIRW(this XmlWriter, XMLIRWElement)")]
         public static void WriteElementTag(this XmlWriter W, ElementTag tag) {
             W.WriteStartDocument();
             MountElementTagEngraving(W, tag, 0);

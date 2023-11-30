@@ -2,7 +2,7 @@ namespace System.Xml {
     public struct XMLIRWValue : IDisposable, IEquatable<XMLIRWValue>, IConvertible {
         private object value;
 
-        public static XMLIRWValue Empty => new(null);
+        public static XMLIRWValue Empty => new XMLIRWValue(null);
 
         public XMLIRWValue(object value) {
             this.value = value;
@@ -75,5 +75,8 @@ namespace System.Xml {
 
         public static bool operator ==(XMLIRWValue left, XMLIRWValue right) => left.Equals(right);
         public static bool operator !=(XMLIRWValue left, XMLIRWValue right) => !(left == right);
+
+        public static explicit operator string(XMLIRWValue V) 
+            => V == Empty ? (string)null : Convert.ToString(V);
     }
 }

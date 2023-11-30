@@ -98,7 +98,7 @@ namespace System.Xml {
             => new ArrayToIEnumerator<XMLIRW>(itens);
 
         public override string ToString() {
-            StringBuilder builder = new();
+            StringBuilder builder = new StringBuilder();
             foreach (var item in this)
                 builder.Append(ToString(item, 0UL));
             return builder.ToString();
@@ -120,20 +120,30 @@ namespace System.Xml {
         IEnumerator IEnumerable.GetEnumerator()
             => new ArrayToIEnumerator<XMLIRW>(itens);
 
-        private static string ToString(XMLIRWElement element, ulong tab) {
-            StringBuilder builder = new();
+        private static string ToString(XMLIRW element, ulong tab) {
+            StringBuilder builder = new StringBuilder();
 
             builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[{element.Name}]=>");
-            if (element.Value != XMLIRWValue.Empty)
-                builder.Append(GetTab(" ", tab)).AppendLine(element.Value.ToString());
 
-            foreach (var item in element)
-                if (item.Type == XmlNodeType.Attribute)
-                    builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[attr][{item.Name}]>\"{item.Value}\"");
+            if (element is XMLIRWElement ele) {
+                builder.Append(GetTab(" ", tab)).AppendLine(ele.Value.ToString());
+                foreach (var item in ele)
+                    ToString(item, tab + 1);
+            } else if (element is XMLIRWAttribute atri)
+                builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[attr][{atri.Name}]>\"{atri.Value}\"");
+            else if (element is XMLIRWComment com) 
+                builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[{com.Name}]>\"{com.Value}\"");
+            else if (element is XMLIRWCDATA cdata) 
+                builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[{cdata.Name}]>\"{cdata.Value}\"");
+            else if (element is XMLIRWDocType docType) {
+                builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[{docType.Name}]>");
 
-            foreach (var item in element)
-                if (item.Type != XmlNodeType.Attribute)
-                    builder.Append(ToString(item, tab + 1));
+                builder.Append(GetTab(" ", tab + 2)).AppendLine($"[{docType.Name}][PudID]:{{{docType.PudID}}}");
+                builder.Append(GetTab(" ", tab + 2)).AppendLine($"[{docType.Name}][SysID]:{{{docType.SysID}}}");
+                builder.Append(GetTab(" ", tab + 2)).AppendLine($"[{docType.Name}][SubSet]:{{{docType.SubSet}}}");
+                
+                builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[{docType.Name}]<>");
+            }
 
             builder.Append("//").Append(GetTab("=", tab)).AppendLine($"===[{element.Name}]<>");
 
@@ -141,7 +151,7 @@ namespace System.Xml {
         }
 
         private static string GetTab(string textTab, ulong count) {
-            StringBuilder builder = new();
+            StringBuilder builder = new StringBuilder();
             for (ulong I = 0; I < count; I++)
                 builder.Append(textTab);
             return builder.ToString();
